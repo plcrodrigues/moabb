@@ -5,15 +5,12 @@ import os
 import glob
 import zipfile
 import yaml
-<<<<<<< HEAD
 from scipy.io import loadmat
 import numpy as np
-=======
 import numpy as np
 from scipy.io import loadmat
 from distutils.dir_util import copy_tree
 import shutil
->>>>>>> correcting the pep8 stuff and some minor bugs; passed on unit tests at home
 
 BI2012_URL = 'https://zenodo.org/record/2649069/files/'
 BI2013_URL = 'https://zenodo.org/record/2669187/files/'
