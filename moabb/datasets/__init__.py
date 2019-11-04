@@ -13,7 +13,8 @@ from .bnci import (BNCI2014001, BNCI2014002, BNCI2014004, BNCI2014008,
 from .bbci_eeg_fnirs import Shin2017A, Shin2017B
 from .schirrmeister2017 import Schirrmeister2017
 from .epfl import EPFLP300
-from .braininvaders import bi2013a
+from .braininvaders import (BrainInvaders2012, BrainInvaders2013, 
+							BrainInvaders2014a, BrainInvaders2015a)
 from .upper_limb import Ofner2017
 from .Weibo2014 import Weibo2014
 from .Zhou2016 import Zhou2016

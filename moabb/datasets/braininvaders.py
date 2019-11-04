@@ -5,6 +5,8 @@ import os
 import glob
 import zipfile
 import yaml
+from scipy.io import loadmat
+import numpy as np
 
 BI2012_URL = 'https://zenodo.org/record/2649069/files/'
 BI2013_URL = 'https://zenodo.org/record/2669187/files/'
@@ -172,7 +174,7 @@ class BrainInvaders2013(BaseDataset):
         super().__init__(
             subjects=list(range(1, 24 + 1)),
             sessions_per_subject='varying',
-            events=dict(Target=33285, NonTarget=33286),
+            events=dict(Target=2, NonTarget=1),
             code='Brain Invaders 2013a',
             interval=[0, 1],
             paradigm='p300',
@@ -220,6 +222,11 @@ class BrainInvaders2013(BaseDataset):
             chtypes = ['eeg'] * 16 + ['stim']               
 
             X = loadmat(file_path)['data'].T
+            # Target=33285, NonTarget=33286
+            stim = X[-1,:]
+            stim[stim == 33285] = 2
+            stim[stim == 33286] = 1
+
             info = mne.create_info(ch_names=chnames, sfreq=512,
                                    ch_types=chtypes, montage='standard_1020',
                                    verbose=False)
