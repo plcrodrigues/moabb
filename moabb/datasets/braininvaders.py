@@ -63,7 +63,7 @@ class BrainInvaders2012(BaseDataset):
             code='Brain Invaders 2012',
             interval=[0, 1],
             paradigm='p300',
-            doi='')
+            doi='10.5281/zenodo.2649006')
 
         self.training = Training
         self.online = Online
@@ -204,7 +204,7 @@ class BrainInvaders2013(BaseDataset):
             code='Brain Invaders 2013a',
             interval=[0, 1],
             paradigm='p300',
-            doi='')
+            doi='10.5281/zenodo.1494163')
 
         self.adaptive = Adaptive
         self.nonadaptive = NonAdaptive
@@ -358,7 +358,7 @@ class BrainInvaders2014a(BaseDataset):
             code='Brain Invaders 2014a',
             interval=[0, 0.8],
             paradigm='p300',
-            doi='')
+            doi='10.5281/zenodo.3266223')
 
     def _get_single_subject_data(self, subject):
         """return data for a single subject"""
@@ -462,7 +462,7 @@ class BrainInvaders2015a(BaseDataset):
             code='Brain Invaders 2015a',
             interval=[0, 0.8],
             paradigm='p300',
-            doi='')
+            doi='10.5281/zenodo.3266930')
 
     def _get_single_subject_data(self, subject):
         """return data for a single subject"""
