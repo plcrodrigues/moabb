@@ -78,7 +78,11 @@ class BrainInvaders2012(BaseDataset):
             session_name = 'session_1'
             condition = file_path.split(
                 '_')[-1].split('.')[0].split(os.sep)[-1]
-            run_name = 'run_' + condition
+
+            if condition == 'training':
+                run_name = 'run_1'
+            else:
+                run_name = 'run_2'
 
             chnames = ['F7',
                        'F3',
