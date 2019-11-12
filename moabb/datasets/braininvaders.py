@@ -339,7 +339,7 @@ class BrainInvaders2013(BaseDataset):
 
 class BrainInvaders2014a(BaseDataset):
     '''
-    This dataset contains electroencephalographic (EEG) recordings of 71
+    This dataset contains electroencephalographic (EEG) recordings of 64
     subjects playing to a visual P300 Brain-Computer Interface (BCI)
     videogame named Brain Invaders. The interface uses the oddball paradigm
     on a grid of 36 symbols (1 Target, 35 Non-Target) that are flashed
@@ -356,7 +356,7 @@ class BrainInvaders2014a(BaseDataset):
 
     def __init__(self):
         super().__init__(
-            subjects=list(range(1, 65 + 1)),
+            subjects=list(range(1, 64 + 1)),
             sessions_per_subject=1,
             events=dict(Target=1, NonTarget=2),
             code='Brain Invaders 2014a',
