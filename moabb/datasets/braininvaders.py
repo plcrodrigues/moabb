@@ -358,7 +358,7 @@ class BrainInvaders2014a(BaseDataset):
         super().__init__(
             subjects=list(range(1, 64 + 1)),
             sessions_per_subject=1,
-            events=dict(Target=1, NonTarget=2),
+            events=dict(Target=2, NonTarget=1),
             code='Brain Invaders 2014a',
             interval=[0, 0.8],
             paradigm='p300',
@@ -462,7 +462,7 @@ class BrainInvaders2015a(BaseDataset):
         super().__init__(
             subjects=list(range(1, 43 + 1)),
             sessions_per_subject=1,
-            events=dict(Target=1, NonTarget=2),
+            events=dict(Target=2, NonTarget=1),
             code='Brain Invaders 2015a',
             interval=[0, 0.8],
             paradigm='p300',
