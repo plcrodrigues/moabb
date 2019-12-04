@@ -232,8 +232,8 @@ class BrainInvaders2013(BaseDataset):
             run_number = run_number.split('.mat')[0]
             run_name = 'run_' + run_number
 
-            chnames = ['FP1',
-                       'FP2',
+            chnames = ['Fp1',
+                       'Fp2',
                        'F5',
                        'AFz',
                        'F6',
@@ -374,8 +374,8 @@ class BrainInvaders2014a(BaseDataset):
         sessions[session_name] = {}
         run_name = 'run_1'
 
-        chnames = ['FP1',
-                   'FP2',
+        chnames = ['Fp1',
+                   'Fp2',
                    'F3',
                    'AFz',
                    'F4',
