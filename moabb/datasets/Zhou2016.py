@@ -93,7 +93,7 @@ class Zhou2016(BaseDataset):
             for run_ind, fname in enumerate(runlist):
                 run_key = 'run_{}'.format(run_ind)
                 out[sess_key][run_key] = read_raw_cnt(fname, preload=True,
-                                                      montage='standard_1005')
+                                                      montage=None)
         return out
 
     def data_path(self, subject, path=None, force_update=False,

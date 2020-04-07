@@ -9,7 +9,7 @@ import numpy as np
 
 from mne import create_info
 from mne.io import RawArray
-from mne.channels import read_montage
+from mne.channels import make_standard_montage
 from . import download as dl
 import logging
 
@@ -88,7 +88,7 @@ class Cho2017(BaseDataset):
         emg_ch_names = ['EMG1', 'EMG2', 'EMG3', 'EMG4']
         ch_names = eeg_ch_names + emg_ch_names + ['Stim']
         ch_types = ['eeg'] * 64 + ['emg'] * 4 + ['stim']
-        montage = read_montage('standard_1005')
+        montage = make_standard_montage('standard_1005')
         imagery_left = data.imagery_left - \
             data.imagery_left.mean(axis=1, keepdims=True)
         imagery_right = data.imagery_right - \
@@ -105,8 +105,7 @@ class Cho2017(BaseDataset):
         log.warning("Trials demeaned and stacked with zero buffer to create "
                     "continuous data -- edge effects present")
 
-        info = create_info(ch_names=ch_names, ch_types=ch_types,
-                           sfreq=data.srate, montage=montage)
+        info = create_info(ch_names=ch_names, ch_types=ch_types, sfreq=data.srate)
         raw = RawArray(data=eeg_data, info=info, verbose=False)
 
         return {'session_0': {'run_0': raw}}
